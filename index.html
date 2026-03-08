@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Club | Turning Data Into Insight</title>
+    <!-- Modern Tech Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Sora:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="deep-analytics">
+    <!-- Cursor Spotlight Effect -->
+    <div id="cursor-glow"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Analytics<span>Club</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#analytics">Insights</a></li>
+                <li><a href="#join" class="btn-primary-sm">Join Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="grid-background"></div>
+            <canvas id="hero-canvas"></canvas>
+            
+            <div class="container hero-content">
+                <div class="hero-text-wrapper translate-z">
+                    <h1 class="hero-title animate-in">Turning Data Into <span class="gradient-text">Insight</span></h1>
+                    <p class="hero-subtitle animate-in">Empowering the next generation of data scientists and researchers at the forefront of the intelligence revolution.</p>
+                    <div class="hero-actions animate-in">
+                        <a href="#join" class="btn-primary">Join the Club</a>
+                        <a href="#events" class="btn-secondary">Explore Events</a>
+                    </div>
+                </div>
+
+                <!-- Floating UI Cards -->
+                <div class="floating-ui-elements">
+                    <div class="ui-card glass float-1">
+                        <div class="card-header">
+                            <span class="label">Accuracy</span>
+                            <span class="trend pos">↑ 12%</span>
+                        </div>
+                        <div class="card-value">98.4<span class="unit">%</span></div>
+                        <div class="mini-chart bar-chart">
+                            <div class="bar" style="height: 40%"></div>
+                            <div class="bar" style="height: 60%"></div>
+                            <div class="bar" style="height: 45%"></div>
+                            <div class="bar" style="height: 80%"></div>
+                            <div class="bar" style="height: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="ui-card glass float-2">
+                        <div class="card-header">
+                            <span class="label">Processing</span>
+                        </div>
+                        <div class="card-value">2.4<span class="unit">TB/s</span></div>
+                        <div class="mini-chart line-chart">
+                            <svg viewBox="0 0 100 40">
+                                <path d="M0 35 Q 20 10, 40 25 T 80 5 T 100 20" fill="none" stroke="var(--neon-cyan)" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <span>Scroll to Explore</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container grid-split">
+                <div class="about-text reveal-left">
+                    <h2 class="section-tag">About Us</h2>
+                    <h3 class="section-title">The Epicenter of Data Excellence</h3>
+                    <p>We are a community of curious minds dedicated to unraveling complexity through data. Our mission is to bridge the gap between academic theory and industry application through hands-on projects and research.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card glass">
+                            <div class="icon">🔬</div>
+                            <h4>Data Science</h4>
+                            <p>Predictive modeling and statistical analysis.</p>
+                        </div>
+                        <div class="feature-card glass">
+                            <div class="icon">🤖</div>
+                            <h4>Machine Learning</h4>
+                            <p>Advanced neural networks and AI research.</p>
+                        </div>
+                        <div class="feature-card glass">
+                            <div class="icon">📊</div>
+                            <h4>Research</h4>
+                            <p>Publishing insights in top-tier journals.</p>
+                        </div>
+                        <div class="feature-card glass">
+                            <div class="icon">🏆</div>
+                            <h4>Competitions</h4>
+                            <p>Crushing leaderboards on Kaggle & Hackathons.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual reveal-right">
+                    <div class="visual-wrapper glass">
+                        <!-- Dynamic Analytics Mesh or Image -->
+                        <div class="analytics-cube">
+                            <div class="side front"></div>
+                            <div class="side back"></div>
+                            <div class="side right"></div>
+                            <div class="side left"></div>
+                            <div class="side top"></div>
+                            <div class="side bottom"></div>
+                        </div>
+                        <div class="nodes-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horizontal Scroll Events Section -->
+        <section id="events" class="horizontal-scroll-container">
+            <div class="sticky-wrapper">
+                <div class="scroll-content">
+                    <div class="section-intro">
+                        <h2 class="section-tag">Events</h2>
+                        <h3 class="section-title">Upcoming Frontiers</h3>
+                    </div>
+                    <div class="event-cards-track">
+                        <!-- Event Card 1 -->
+                        <div class="event-card glass">
+                            <div class="card-img">
+                                <img src="event1.jpg" alt="Data Summit">
+                                <div class="card-glow"></div>
+                            </div>
+                            <div class="card-info">
+                                <span class="card-date">March 15, 2026</span>
+                                <h4>Global Data Summit</h4>
+                                <p>Join top industry leaders for a day of intensive workshops and networking.</p>
+                            </div>
+                        </div>
+                        <!-- Event Card 2 -->
+                        <div class="event-card glass">
+                            <div class="card-img">
+                                <img src="event2.jpg" alt="Hackathon">
+                                <div class="card-glow"></div>
+                            </div>
+                            <div class="card-info">
+                                <span class="card-date">April 02, 2026</span>
+                                <h4>Deep Learning Hackathon</h4>
+                                <p>48 hours of non-stop building. $10k in prizes for the most innovative models.</p>
+                            </div>
+                        </div>
+                        <!-- Event Card 3 -->
+                        <div class="event-card glass">
+                            <div class="card-img">
+                                <img src="event3.jpg" alt="ML Workshop">
+                                <div class="card-glow"></div>
+                            </div>
+                            <div class="card-info">
+                                <span class="card-date">May 10, 2026</span>
+                                <h4>MLOps Masterclass</h4>
+                                <p>Scaling intelligence from notebook to production at enterprise scale.</p>
+                            </div>
+                        </div>
+                         <!-- Event Card 4 -->
+                         <div class="event-card glass">
+                            <div class="card-img">
+                                <img src="event4.jpg" alt="Research Night">
+                                <div class="card-glow"></div>
+                            </div>
+                            <div class="card-info">
+                                <span class="card-date">June 05, 2026</span>
+                                <h4>AI Research Symposium</h4>
+                                <p>Present your findings to the faculty and win publication sponsorship.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Data Visualization Section -->
+        <section id="analytics" class="analytics-section">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-tag">📊 Analytics in Action</h2>
+                    <h3 class="section-title">Visualizing the Intelligence</h3>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="main-viz-card glass reveal-up">
+                        <div class="viz-header">
+                            <h4>Real-time Processing Flux</h4>
+                            <div class="viz-legend">
+                                <span><i class="dot blue"></i> Ingested</span>
+                                <span><i class="dot cyan"></i> Processed</span>
+                            </div>
+                        </div>
+                        <div class="canvas-container">
+                            <canvas id="live-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="stats-sidebar">
+                        <div class="stat-card glass reveal-right" data-delay="0.1">
+                            <div class="stat-icon">💾</div>
+                            <div class="stat-info">
+                                <span class="label">Data Processed</span>
+                                <div class="value counter" data-target="1520">0</div>
+                                <span class="unit">Gigabytes</span>
+                            </div>
+                        </div>
+                        <div class="stat-card glass reveal-right" data-delay="0.2">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-info">
+                                <span class="label">Active Members</span>
+                                <div class="value counter" data-target="450">0</div>
+                                <span class="unit">Scientists</span>
+                            </div>
+                        </div>
+                        <div class="stat-card glass reveal-right" data-delay="0.3">
+                            <div class="stat-icon">🚀</div>
+                            <div class="stat-info">
+                                <span class="label">Projects Running</span>
+                                <div class="value counter" data-target="28">0</div>
+                                <span class="unit">Live Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="achievements-section">
+            <div class="container">
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <div class="stat-value counter" data-target="50">0</div>
+                        <div class="stat-label">Hackathon Wins</div>
+                        <div class="mini-bar-track"><div class="mini-bar" style="width: 85%"></div></div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="stat-value counter" data-target="15">0</div>
+                        <div class="stat-label">Research Papers</div>
+                        <div class="mini-bar-track"><div class="mini-bar" style="width: 60%"></div></div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="stat-value counter" data-target="120">0</div>
+                        <div class="stat-label">Industry Partners</div>
+                        <div class="mini-bar-track"><div class="mini-bar" style="width: 75%"></div></div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="stat-value counter" data-target="5">0</div>
+                        <div class="stat-label">Years of Excellence</div>
+                        <div class="mini-bar-track"><div class="mini-bar" style="width: 100%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="join" class="cta-section">
+            <div class="container glass cta-inner">
+                <div class="glow-bg"></div>
+                <h2 class="reveal-up">Join the Data Revolution</h2>
+                <p class="reveal-up">Unlock your potential and contribute to the future of intelligence. Membership applications are now open.</p>
+                <div class="cta-btns reveal-up">
+                    <a href="#" class="btn-primary-glowing">Become a Member</a>
+                    <a href="#" class="btn-outline">View Community</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">📊</span>
+                        <span class="logo-text">Analytics<span>Club</span></span>
+                    </div>
+                    <p>Pioneering the future of data-driven decisions at the university level.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h5>Explore</h5>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#events">Events</a></li>
+                            <li><a href="#analytics">Insights</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h5>Social</h5>
+                        <ul>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">X (Twitter)</a></li>
+                            <li><a href="#">GitHub</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h5>Contact</h5>
+                        <ul>
+                            <li>contact@analyticsclub.edu</li>
+                            <li>University Campus, Building B</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Analytics Club. Built with ⚡ by Advanced AI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
