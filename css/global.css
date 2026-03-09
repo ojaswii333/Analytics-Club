@@ -354,3 +354,49 @@ font-size:2rem;
 }
 
 }
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:var(--text-primary);
+}
+
+/* mobile layout */
+
+@media (max-width:768px){
+
+.nav-links{
+
+display:none;
+
+position:absolute;
+
+top:var(--nav-height);
+
+left:0;
+
+width:100%;
+
+background:var(--bg-deep);
+
+flex-direction:column;
+
+padding:20px;
+
+gap:20px;
+
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+}
