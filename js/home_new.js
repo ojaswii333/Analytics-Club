@@ -49,3 +49,116 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000)
 updateCountdown()
+
+// Counter animation for Active members, projects and all 
+const counters = document.querySelectorAll(".stat-number")
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            const counter = entry.target
+            const target = +counter.dataset.target
+
+            let count = 0
+
+            const update = () => {
+
+                const increment = target / 80
+
+                count += increment
+
+                if (count < target) {
+
+                    counter.innerText = Math.ceil(count)
+
+                    requestAnimationFrame(update)
+
+                } else {
+
+                    counter.innerText = target
+
+                }
+
+            }
+
+            update()
+
+            observer.unobserve(counter)
+
+        }
+
+    })
+
+})
+
+counters.forEach(counter => {
+    observer.observe(counter)
+})
+
+
+// Scroll reveal script 
+const revealElements = document.querySelectorAll(".reveal")
+
+const revealObserver = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("active")
+
+        }
+
+    })
+
+}, { threshold: 0.2 })
+
+revealElements.forEach(el => {
+    revealObserver.observe(el)
+})
+
+
+// Particle background 
+particlesJS("particles-js", {
+
+    particles: {
+
+        number: {
+            value: 60
+        },
+
+        color: {
+            value: "#00D4FF"
+        },
+
+        shape: {
+            type: "circle"
+        },
+
+        opacity: {
+            value: 0.5
+        },
+
+        size: {
+            value: 3
+        },
+
+        line_linked: {
+            enable: true,
+            distance: 120,
+            color: "#00D4FF",
+            opacity: 0.3,
+            width: 1
+        },
+
+        move: {
+            enable: true,
+            speed: 1
+        }
+
+    }
+
+})
