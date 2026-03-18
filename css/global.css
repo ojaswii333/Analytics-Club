@@ -121,10 +121,9 @@ img {
     width: 100%;
     height: var(--nav-height);
     z-index: 1000;
-    border-radius: 0;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border-bottom: 1px solid var(--border-glass);
+    background: rgba(11, 15, 25, 0.6);
+    backdrop-filter: blur(10px);
 }
 
 .navbar .container {
@@ -140,7 +139,6 @@ img {
     gap: 0.8rem;
     font-size: 1.5rem;
     z-index: 1001;
-    /* Stay above mobile menu */
 }
 
 .logo-text span {
@@ -152,6 +150,7 @@ img {
     list-style: none;
     gap: 2.5rem;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
 .nav-links a {
@@ -166,7 +165,8 @@ img {
 }
 
 /* Mobile Menu Toggle */
-.mobile-menu-btn {
+.mobile-menu-btn,
+.menu-toggle {
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -176,6 +176,8 @@ img {
     border: none;
     cursor: pointer;
     z-index: 1001;
+    color: var(--text-primary);
+    font-size: 28px;
 }
 
 .mobile-menu-btn span {
@@ -205,6 +207,14 @@ img {
     color: var(--bg-deep) !important;
     padding: 0.6rem 1.2rem;
     border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: transform 0.3s;
+}
+
+.btn-primary-sm:hover {
+    transform: translateY(-2px);
 }
 
 .btn-primary {
@@ -310,14 +320,6 @@ img {
     color: var(--neon-blue);
 }
 
-.footer-bottom {
-    text-align: center;
-    padding-top: 3rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
 /* Base Animations */
 .animate-in {
     opacity: 0;
@@ -355,7 +357,7 @@ img {
     transform: translate(0);
 }
 
-/* Global Responsive Rules */
+/* Responsive Rules */
 @media (max-width: 1024px) {
     .container {
         padding: 0 1.5rem;
@@ -384,7 +386,8 @@ img {
         font-size: 2rem;
     }
 
-    .mobile-menu-btn {
+    .mobile-menu-btn,
+    .menu-toggle {
         display: flex;
     }
 
@@ -401,6 +404,8 @@ img {
         transition: right 0.3s ease-in-out;
         z-index: 1000;
         padding: 2rem;
+        display: flex;
+        /* Override hidden state */
     }
 
     .nav-links.active {

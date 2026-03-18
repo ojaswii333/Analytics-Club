@@ -1,6 +1,22 @@
+const isMobile = window.innerWidth < 768
+window.addEventListener("load", () => {
+
+const preloader = document.getElementById("preloader")
+
+setTimeout(() => {
+
+preloader.style.opacity = "0"
+
+setTimeout(()=>{
+preloader.style.display = "none"
+},500)
+
+},2500)
+
+})
 document.addEventListener('DOMContentLoaded', () => {
-    // Basic setup
-    if (!isMobile) {
+
+    if(!isMobile){
         initCursorGlow();
         initHeroCanvas();
         initHorizontalScroll();
@@ -9,27 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initCounters();
     initInteractions();
+<<<<<<<< HEAD:js/script.js
+    initLiveChart();
 
-    // Components might load later, so we listen for the custom event
+    // Re-init for components
     window.addEventListener('componentsLoaded', () => {
         initInteractions();
-        // If mobile menu was inside a component, it's already init in components.js
-        // but we can call safe re-init if needed.
     });
 });
+========
+    initMobileMenu();
+>>>>>>>> c85f189db082c187d2b358dab1b133fb6b63feae:js/home.js
 
-const isMobile = window.innerWidth < 768;
-
-window.addEventListener("load", () => {
-    const preloader = document.getElementById("preloader");
-    if (preloader) {
-        setTimeout(() => {
-            preloader.style.opacity = "0";
-            setTimeout(() => {
-                preloader.style.display = "none";
-            }, 500);
-        }, 1500); // Reduced delay for faster UX
-    }
 });
 /**
  * Cursor Spotlight Effect
@@ -53,10 +60,10 @@ function initCursorGlow() {
  * Hero Background Canvas (Data Nodes & Lines)
  */
 function initHeroCanvas() {
-    const canvas = document.getElementById('hero-canvas');
-    if (!canvas) return
+   const canvas = document.getElementById('hero-canvas');
+if(!canvas) return
 
-    const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
     let width, height;
     let particles = [];
 
@@ -343,12 +350,12 @@ function initInteractions() {
         }
     });
 }
-function initMobileMenu() {
+function initMobileMenu(){
 
     const menuToggle = document.querySelector(".menu-toggle")
     const navLinks = document.querySelector(".nav-links")
 
-    if (!menuToggle || !navLinks) return
+    if(!menuToggle || !navLinks) return
 
     menuToggle.addEventListener("click", () => {
 
@@ -358,12 +365,12 @@ function initMobileMenu() {
 
 }
 
-if (menuToggle) {
+if(menuToggle){
 
-    menuToggle.addEventListener("click", () => {
+menuToggle.addEventListener("click", () => {
 
-        navLinks.classList.toggle("active")
+navLinks.classList.toggle("active")
 
-    })
+})
 
 }

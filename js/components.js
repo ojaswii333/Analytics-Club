@@ -3,10 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('components/navbar.html')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('navbar-container').innerHTML = data;
-            // Initialize mobile menu after navbar is loaded
-            initMobileMenu();
-            notifyComponentsLoaded();
+            const container = document.getElementById('navbar-container') || document.getElementById('navbar');
+            if (container) {
+                container.innerHTML = data;
+                // Initialize mobile menu after navbar is loaded
+                initMobileMenu();
+                notifyComponentsLoaded();
+            }
         })
         .catch(error => console.error('Error loading navbar:', error));
 
@@ -14,8 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('components/footer.html')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('footer-container').innerHTML = data;
-            notifyComponentsLoaded();
+            const container = document.getElementById('footer-container') || document.getElementById('footer');
+            if (container) {
+                container.innerHTML = data;
+                notifyComponentsLoaded();
+            }
         })
         .catch(error => console.error('Error loading footer:', error));
 });
@@ -26,13 +32,20 @@ function notifyComponentsLoaded() {
 }
 
 function initMobileMenu() {
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const navLinks = document.getElementById('nav-links');
+    const mobileBtn = document.getElementById('mobile-menu-btn') || document.querySelector('.menu-toggle');
+    const navLinks = document.getElementById('nav-links') || document.querySelector('.nav-links');
 
     if (mobileBtn && navLinks) {
         mobileBtn.addEventListener('click', () => {
             mobileBtn.classList.toggle('active');
             navLinks.classList.toggle('active');
+
+            // For alternative classes if used
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else if (window.innerWidth <= 768) {
+                // navLinks.style.display = 'flex'; // handled by CSS active class usually
+            }
         });
 
         // Close menu when a link is clicked
