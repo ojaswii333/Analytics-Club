@@ -300,7 +300,10 @@ function initInteractions() {
         '.reveal-up',
         '.reveal-left',
         '.reveal-right',
-        '.feature-card'
+        '.feature-card',
+        '.developer-card',
+        '.section-tag',
+        '.section-title'
     ];
 
     // Check elements immediately for pages where they might already be in view
@@ -333,16 +336,75 @@ function initInteractions() {
     document.addEventListener('click', function (e) {
         const anchor = e.target.closest('a[href^="#"]');
         if (anchor) {
-            e.preventDefault();
-            const targetId = anchor.getAttribute('href');
-            if (targetId === '#') return;
-            const target = document.querySelector(targetId);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+            const href = anchor.getAttribute('href');
+            // Check if it's an internal link on the current page
+            if (href.startsWith('#') || href.includes('index.html#')) {
+                const targetId = href.split('#')[1];
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         }
     });
+
+    // Navbar highlighting logic
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href && (href.includes(`#${current}`) || (current === 'hero' && href === 'index.html'))) {
+                link.classList.add('active');
+            }
+        });
+    });
 }
+
+/**
+ * 3D Parallax Tilt for Developer Cards
+ */
+function initDeveloperCards() {
+    const cards = document.querySelectorAll('.developer-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+    });
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+    initDeveloperCards();
+});
+
 function initMobileMenu() {
 
     const menuToggle = document.querySelector(".menu-toggle")

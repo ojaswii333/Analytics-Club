@@ -655,3 +655,239 @@
         padding: 3rem 1.5rem;
     }
 }
+
+/* ===============================
+   DEVELOPERS SECTION
+================================ */
+.developers-section {
+    padding: 10rem 0;
+    position: relative;
+    background: linear-gradient(to bottom, transparent, rgba(0, 212, 255, 0.02), transparent);
+    overflow: hidden;
+}
+
+.section-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.developers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 5rem;
+    perspective: 1000px;
+}
+
+.developer-card {
+    position: relative;
+    width: 380px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: transform 0.1s ease-out, border-color 0.3s, box-shadow 0.3s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    animation: float 6s infinite ease-in-out;
+}
+
+.developer-card:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+}
+
+.card-inner {
+    position: relative;
+    z-index: 5;
+    transform: translateZ(50px);
+}
+
+/* Data Pulse Effect (Option B) */
+.data-pulse {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.developer-card:hover .data-pulse {
+    opacity: 1;
+    animation: pulseWave 2s infinite ease-out;
+}
+
+@keyframes pulseWave {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Profile Frame & Rotating Ring (Option A) */
+.profile-frame {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-glass);
+    position: relative;
+    z-index: 10;
+}
+
+.rotating-ring {
+    position: absolute;
+    inset: 0;
+    border: 2px dashed var(--neon-cyan);
+    border-radius: 50%;
+    animation: rotateRing 10s infinite linear;
+    opacity: 0.5;
+}
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.developer-card:hover .rotating-ring {
+    border-style: solid;
+    opacity: 1;
+    box-shadow: 0 0 15px var(--neon-cyan);
+    animation: rotateRing 3s infinite linear;
+}
+
+/* Dev Info */
+.dev-info h4 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-primary);
+}
+
+.role {
+    display: block;
+    color: var(--neon-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+
+.bio {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-glass);
+    transition: all 0.3s var(--spring-easing);
+    position: relative;
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-secondary);
+    transition: fill 0.3s;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: rgba(0, 212, 255, 0.1);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.social-icon:hover svg {
+    fill: var(--neon-blue);
+}
+
+/* Tooltip */
+.social-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    padding: 0.5rem 0.8rem;
+    background: var(--bg-deep);
+    border: 1px solid var(--neon-blue);
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.social-icon:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+    .developers-grid {
+        gap: 2rem;
+    }
+
+    .developer-card {
+        width: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+    .developers-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .developer-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
