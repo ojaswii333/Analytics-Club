@@ -2,292 +2,183 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>The Analytical Casino | Analytics Club</title>
-
-<link rel="stylesheet" href="/css/global.css">
-<link rel="stylesheet" href="/css/events.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Analytical Casino | Analytics Club</title>
+  <!-- Modern Tech Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Sora:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/events.css">
 </head>
 
-<body>
-
-<header class="navbar glass">
-<div class="container">
-
-<div class="logo">
-<img src="/assets/logo.png" class="logo-icon">
-<span class="logo-text">Analytics<span>Club</span></span>
-</div>
-
-<ul class="nav-links">
-<li><a href="/index.html">Home</a></li>
-<li><a href="#">Events</a></li>
-<li><a href="#">Team</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-
-</div>
-</header>
-
-
-<main>
-
-<!-- HERO -->
-
-<section class="hero-event section">
-
-<div class="grid-background"></div>
-
-<div class="container hero-content">
-
-<div class="hero-text">
-
-<span class="section-tag">Strategy Event</span>
-
-<h1 class="hero-title">
-THE ANALYTICAL CASINO
-</h1>
-
-<p class="hero-subtitle">
-Decode. Bet. Dominate.
-</p>
-
-<div class="hero-actions">
-<a href="#" class="btn-primary">Register</a>
-<a href="#" class="btn-secondary">Explore Rounds</a>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- INTRO -->
-
-<section class="arena-intro section">
-
-<div class="container center">
-
-<span class="section-tag">The Game</span>
-
-<h2 class="section-title">
-Enter The Casino
-</h2>
-
-<p style="max-width:700px;margin:auto;">
-35 Teams enter a high-stakes analytical arena where every decision,
-every risk, and every move determines survival.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ROUND 1 -->
-
-<section class="round1 section">
-
-<div class="container grid-split">
-
-<div class="round-text">
-
-<span class="section-tag">Round 1</span>
-
-<h2 class="section-title">
-Analyst Blitz
-</h2>
-
-<p>
-Answer fast. Choose targets. Trust probability.
-Only the sharpest survive.
-</p>
-
-</div>
-
-<div class="round-visual">
-
-<div class="control-text">
-  Correct Answer — You Control the Shot
-</div>
-
-<!-- WHEEL -->
-<div class="wheel">
-
-<div class="slot slot1"></div>
-<div class="slot slot2"></div>
-<div class="slot slot3"></div>
-<div class="slot slot4"></div>
-<div class="slot slot5"></div>
-<div class="slot slot6"></div>
-
-</div>
-
-<!-- RESULT -->
-<div class="result-text">
-35 → 20 Teams Advance
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ROUND 2 -->
-
-<section class="round2 section">
-
-<div class="container grid-split">
-
-<div class="round-text">
-
-<span class="section-tag">Round 2</span>
-
-<h2 class="section-title">
-Range & Stake
-</h2>
-
-<p>
-Estimate, collaborate, and decide whether to split or betray.
-Strategy becomes more important than speed.
-</p>
-
-</div>
-
-<div class="round-visual">
-
-<div class="phase phase-guess">
-  <p class="question-text">
-    Estimate India's daily UPI transactions
-  </p>
-  <div class="guess-value">?</div>
-</div>
-
-<div class="phase phase-decision">
-
-  <div class="player player-a glass">
-    <h3>Team A</h3>
-    <div class="choice"></div>
-    <div class="credits">1000</div>
-  </div>
-
-  <div class="player player-b glass">
-    <h3>Team B</h3>
-    <div class="choice">?</div>
-    <div class="credits">1000</div>
-  </div>
-
-</div>
-
-<div class="phase phase-result">
-  <div class="result-text">
-    Strategy Decides Survival
-  </div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ROUND 3 -->
-<section class="round3 section">
-
-<div class="container grid-split">
-
-<div class="round-text">
-
-<span class="section-tag">Round 3</span>
-
-<h2 class="section-title">
-The Big Short Finale
-</h2>
-
-<p>
-Analyze incomplete data, predict outcomes, and bid strategically.
-Only the smartest risk-takers will win.
-</p>
-
-</div>
-
-<div class="round-visual">
-
-<!-- GRAPH PHASE -->
-<div class="phase phase-graph">
-  <div class="graph-container">
-
-    <div class="graph-line">
-      <div class="graph-progress"></div>
+<body class="deep-analytics">
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="logo-spinner">📊</div>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
     </div>
-
-    <div class="graph-end">?</div>
-
-  </div>
-</div>
-<!-- BIDDING PHASE -->
-<div class="phase phase-bid">
-  <div class="bid player-a glass">
-    Team A
-    <div class="bid-value">200</div>
   </div>
 
-  <div class="bid player-b glass">
-    Team B
-    <div class="bid-value">450</div>
-  </div>
-</div>
+  <!-- Cursor Spotlight Effect -->
+  <div id="cursor-glow"></div>
 
-<!-- RESULT -->
-<div class="phase phase-final">
-  <div class="result-text">
-    Closest Prediction Wins
-  </div>
-</div>
+  <!-- Navigation Placeholder -->
+  <div id="navbar-container"></div>
 
-<div class="flash"></div>
+  <main>
+    <!-- HERO PHASE: THE ANALYTICAL CASINO -->
+    <section class="hero-section" style="height: 100vh;">
+      <div class="grid-background"></div>
+      <div class="container hero-content" style="z-index: 10;">
+        <div class="hero-text">
+          <span class="section-tag">Featured Event</span>
+          <h1 class="hero-title animate-in">THE ANALYTICAL <span class="gradient-text">CASINO</span></h1>
+          <p class="hero-subtitle animate-in">Decode. Bet. Dominate. Enter the high-stakes arena where data meets
+            destiny.</p>
+          <div class="hero-actions animate-in">
+            <a href="#rounds" class="btn-primary">Explore Rounds</a>
+            <a href="register.html" class="btn-secondary">Register Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
+    <!-- EVENT DESCRIPTION -->
+    <section class="analytics-section" style="padding: 5rem 0;">
+      <div class="container center">
+        <span class="section-tag">The Challenge</span>
+        <h2 class="section-title">35 Teams. 1 Victor.</h2>
+        <p style="max-width: 800px; margin: 2rem auto; color: var(--text-secondary);">35 Teams enter a high-stakes
+          analytical arena where every decision, every risk, and every move determines survival. Will you play it safe,
+          or go all-in on your insights?</p>
+      </div>
+    </section>
 
-</div>
+    <!-- ROUNDS SECTION -->
+    <section id="rounds" class="analytics-section">
+      <div class="container">
+        <!-- Round 1 -->
+        <div class="grid-split" style="margin-bottom: 10rem; align-items: center;">
+          <div class="round-text reveal-left">
+            <span class="section-tag">Round 1</span>
+            <h3 class="section-title">Analyst Blitz</h3>
+            <p>Answer fast. Choose targets. Trust probability. Correct answers grant you control over the shot. Only 20
+              teams will emerge from the first wave.</p>
+          </div>
+          <div class="round-visual reveal-right">
+            <div class="wheel">
+              <div class="slot slot1"></div>
+              <div class="slot slot2"></div>
+              <div class="slot slot3"></div>
+              <div class="slot slot4"></div>
+              <div class="slot slot5"></div>
+              <div class="slot slot6"></div>
+            </div>
+            <div class="result-text" style="opacity: 1; transform: none; margin-top: 2rem;">35 → 20 Teams Advance</div>
+          </div>
+        </div>
 
-</section>
+        <!-- Round 2 -->
+        <div class="grid-split" style="margin-bottom: 10rem; align-items: center; direction: rtl;">
+          <div class="round-text reveal-right" style="direction: ltr;">
+            <span class="section-tag">Round 2</span>
+            <h3 class="section-title">Range & Stake</h3>
+            <p>Estimate, collaborate, and decide whether to split or betray. In this round, strategy and psychological
+              insight become as critical as statistical accuracy.</p>
+          </div>
+          <div class="round-visual reveal-left" style="direction: ltr;">
+            <div class="phase phase-decision"
+              style="opacity: 1; position: static; transform: none; display: flex; gap: 2rem;">
+              <div class="player player-a glass" style="border: 1px solid var(--neon-blue);">
+                <h4>Team A</h4>
+                <div class="credits">1000 CR</div>
+              </div>
+              <div class="player player-b glass">
+                <h4>Team B</h4>
+                <div class="credits">1000 CR</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- Round 3 -->
+        <div class="grid-split" style="margin-bottom: 5rem; align-items: center;">
+          <div class="round-text reveal-left">
+            <span class="section-tag">Round 3</span>
+            <h3 class="section-title">The Big Short Finale</h3>
+            <p>Analyze incomplete data, predict outcomes, and bid strategically. This is where the legends are made.
+              Closest prediction wins the grand prize.</p>
+          </div>
+          <div class="round-visual reveal-right">
+            <div class="graph-container glass" style="padding: 2rem; width: 300px;">
+              <div class="graph-line">
+                <div class="graph-progress" style="transform: scaleX(0.7);"></div>
+              </div>
+              <div class="graph-end">?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <!-- OTHER UPCOMING EVENTS -->
+    <section id="other-events" class="analytics-section" style="background: rgba(0,0,0,0.2);">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="section-tag">More To Explore</h2>
+          <h3 class="section-title">Upcoming Frontiers</h3>
+        </div>
+        <div class="dashboard-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+          <!-- Event 1 -->
+          <div class="event-card glass">
+            <div class="card-img">
+              <img src="assets/images/event1.jpg" alt="Data Summit">
+              <div class="card-glow"></div>
+            </div>
+            <div class="card-info">
+              <span class="card-date">March 15, 2026</span>
+              <h4>Global Data Summit</h4>
+              <p>Intensive workshops and networking with industry leades.</p>
+            </div>
+          </div>
+          <!-- Event 2 -->
+          <div class="event-card glass">
+            <div class="card-img">
+              <img src="assets/images/event2.jpg" alt="Hackathon">
+              <div class="card-glow"></div>
+            </div>
+            <div class="card-info">
+              <span class="card-date">April 02, 2026</span>
+              <h4>Deep Learning Hackathon</h4>
+              <p>48 hours of building next-gen AI solutions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <!-- Footer Placeholder -->
+  <div id="footer-container"></div>
 
-<footer class="footer">
-
-<div class="container">
-<p style="text-align:center;">
-© Analytics Club
-</p>
-</div>
-
-</footer>
-
-
-<!-- SCRIPTS -->
-
-<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/gsap@3/dist/TextPlugin.min.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis/dist/lenis.min.js"></script>
-
-<script src="/js/scroll.js"></script>
-<script src="/js/events.js"></script>
-
+  <!-- Scripts -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis/dist/lenis.min.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
+</html>
+
 </html>
